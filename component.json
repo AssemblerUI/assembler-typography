@@ -1,0 +1,29 @@
+{
+  "name": "assembler-typography",
+  "description": "A typography component built for the assembler framework",
+  "version": "0.1.0",
+  "keywords": [
+    "responsive",
+    "css",
+    "sass",
+    "typography",
+    "component",
+    "mobile-first"
+  ],
+  "main": [
+    "./dist/assembler-typography.css",
+    "./dist/assembler-typography.css.map",
+    "./dist/assembler-typography.min.css",
+    "./dist/assembler-typography.min.css.map"
+  ],
+  "styles": [
+    [
+      "./dist/assembler-typography.css",
+      "./dist/assembler-typography.css.map",
+      "./dist/assembler-typography.min.css",
+      "./dist/assembler-typography.min.css.map"
+    ]
+  ],
+  "demo": "https://AssemblerUI.github.io/assembler-typography",
+  "license": "MIT"
+}

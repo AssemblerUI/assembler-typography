@@ -1,0 +1,47 @@
+{
+  "name": "assembler-typography",
+  "description": "A typography component built for the Assembler framework",
+  "authors": [
+    "Chris Newton <chrisohpedia@gmail.com> (http://chrisnewton.me/about)"
+  ],
+  "version": "0.1.0",
+  "keywords": [
+    "responsive",
+    "css",
+    "sass",
+    "typography",
+    "component",
+    "mobile-first"
+  ],
+  "main": [
+    "./dist/assembler-typography.css",
+    "./dist/assembler-typography.css.map",
+    "./dist/assembler-typography.min.css",
+    "./dist/assembler-typography.min.css.map"
+  ],
+  "homepage": "https://AssemblerUI.github.io/assembler-typography",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AssemblerUI/assembler-typography.git"
+  },
+  "license": "MIT",
+  "ignore": [
+    "/.*",
+    "node_modules",
+    "bower_components",
+    "docs",
+    "tasks",
+    "_config.yml",
+    "browserlist",
+    "Gemfile",
+    "Gemfile.lock",
+    "Gruntfile.js",
+    "CONTRIBUTING.md",
+    "OWNERS.md",
+    "component.json"
+  ],
+  "devDependencies": {
+    "assembler-functions": "~0.3.1",
+    "assembler-mixins": "~0.2.1"
+  }
+}
