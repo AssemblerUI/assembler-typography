@@ -1,4 +1,4 @@
-# assembler-typography
+# Assembler Typography
 
 A typography component built for the Assembler framework.
 
