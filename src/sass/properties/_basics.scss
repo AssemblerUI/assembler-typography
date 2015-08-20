@@ -1,0 +1,94 @@
+// @TODO:
+// http://alistapart.com/article/more-meaningful-typography
+// 1. pick the font family that you want to use, then checkout its
+// http://webfontspecimen.com/ to see what size it looks best at
+// 2. use golden ratio for line-height and then determine measure from that
+//
+// images/audio/video with resolution
+// float left/ float right images
+
+// resources:
+// * http://typecast.com/blog/4-simple-steps-to-vertical-rhythm
+// particularly useful for the incremental leading
+// * http://paletton.com/#uid=73K0u0kllllaFw0g0qFqFg0w0aF
+// * http://www.markboulton.co.uk/journal/incremental-leading
+// As we’ve decided we want to align 4 rows of the main content to 5 rows of the sidenote, we begin by finding the value, in pixels, of 4 rows combined, our base font for the 4 columns is 18px
+// Four lines of the main content. => 18px x 4 = 72px
+// Then we find the value for 5 lines of the sidenote. => 72px ÷ 5 = 14.4px
+// * http://24ways.org/2006/compose-to-a-vertical-rhythm
+// in order to find the line-heights of headings, use the following formula:
+// line-height base / font-size = line-height of h*, then margin of top/bottom will be set to that line-height as well or combination of it
+// * http://www.gridlover.net/app/
+// * http://chrisvalleskey.com/fillerama/ => star wars filler text
+// * https://drewish.com/tools/vertical-rhythm/ => awesome tool for creating vertical rhythm
+// * https://github.com/Compass/compass/blob/stable/core/stylesheets/compass/typography/_vertical_rhythm.scss => how compass does it with sass
+// * http://www.sitepoint.com/using-sass-build-custom-type-scale-vertical-rhythm/ => responsive vertical rhythm
+// * http://alistapart.com/article/settingtypeontheweb => @TODO: read
+
+@mixin typography-basics() {
+	$padding: 0.5rem;
+
+	html {
+		@include print( $body );
+		font-size: 100%;
+	}
+	p, blockquote, q, pre,
+	address,
+	a, code,
+	dl, ol, ul,
+	form,
+	table {
+		margin: #{map-get( $body, 'line-height' )}rem 0;
+	}
+	p,
+	blockquote,
+	q {
+		max-width: measure( map-get( $measure, 'max' ) );
+	}
+	blockquote {
+		$border-width: 10px;
+		$border-color: map-get( $colors, 'white' );
+
+		position: relative;
+		left: calc( -#{map-get( $body, 'line-height' )}rem - #{$border-width} );
+		border-left: $border-width solid darken( $border-color, 7% );
+		padding-left: #{map-get( $body, 'line-height' )}rem;
+		font-style: italic;
+		// font-family: get configuration map that is using serif font
+
+		cite {
+			display: block;
+			font-style: normal;
+			text-align: right;
+			&::before {
+				margin-right: $padding;
+				content: '\2014';
+			}
+		}
+	}
+
+	sub,
+	sup {
+		line-height: 0;
+	}
+
+	abbr {
+		border-bottom: 1px dotted darken( map-get( $colors, 'body' ), 20% );
+		cursor: help;
+	}
+
+	address {
+		font-style: normal;
+	}
+	a {
+		@include text-decoration();
+		p & {
+			// http://joshnh.com/2012/09/06/increasing-the-clickable-area-of-inline-links/
+
+			position: relative;
+			margin: -$padding;
+			padding: $padding;
+			background-position: 0 calc(0.9rem + #{$padding});
+		}
+	}
+}

@@ -1,0 +1,21 @@
+@mixin typography-code() {
+	pre {
+		margin-bottom: vr-block(1, -1);
+		border: 1px solid darken( map-get( $colors, 'white' ), 7% );
+		padding: calc( #{map-get( $body, 'line-height' )} * .445rem );
+		background-color: darken( map-get( $colors, 'white' ), 2% );
+
+		code {
+			border: 0;
+			padding: 0;
+			background: none;
+		}
+	}
+
+	code {
+		border: 1px solid darken( map-get( $colors, 'white' ), 7% );
+		padding: calc( #{map-get( $body, 'line-height' )} * .05rem ) calc( #{map-get( $body, 'line-height' )} * .15rem );
+		background-color: darken( map-get( $colors, 'white' ), 2% );
+		@include print( $code );
+	}
+}

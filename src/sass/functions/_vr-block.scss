@@ -1,0 +1,6 @@
+@function vr-multiplier( $n: 1 ) {
+	// the base font size is 100%, which translates to 16px;
+	$base-unit: strip-unit( 16px * map-get( $body, 'line-height' ) );
+	@return map-get( $body, 'line-height' ) * $n + rem;
+}
+

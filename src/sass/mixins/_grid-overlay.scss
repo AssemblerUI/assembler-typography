@@ -1,0 +1,9 @@
+@mixin typography-grid( $color: rgb(0,0,0), $px-offset: false ) {
+	.typography-grid {
+		background-image: linear-gradient( to top, rgba( $color, .1) 1px, transparent 1px );
+		@if $px-offset {
+			background-position: 0 $px-offset + px;
+		}
+		background-size: 100% ( map-get( $body, 'line-height' ) ) + rem;
+	}
+}

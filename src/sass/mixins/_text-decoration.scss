@@ -1,0 +1,27 @@
+/*
+ * This mixin is meant to give a better text-decoration that sits comfortably
+ * below the text and uses text shadow to knock out the underline around
+ * descenders
+ *
+ * $background-color - defaults to white, blends text shadow with background
+ *                     color to create 'knock-out' effect
+ * $color - defaults to blue, matches the text and underline colors
+*/
+@mixin text-decoration( $color: map-get( $colors, 'link' ), $background-color: map-get( $colors, 'white' ), $hover: false ) {
+	background-clip: content-box; // caniuse.com/#feat=background-img-opts (ie8+)
+	background-position: 0 1em;
+	background-repeat: repeat-x;
+	background-size: 1px 1px;
+	color: $color;
+	text-decoration: none;
+	text-shadow: 1px 0 0 $background-color, 1px 0 0 $background-color, -1px 0 0 $background-color, -1px 0 0 $background-color;
+	word-break: break-word;
+
+	@if $hover {
+		&:hover {
+			background-image: linear-gradient(to bottom, transparentize( map-get( $colors, 'black' ), 0) 75%, transparentize(darken($color, 5%), 0.15) 75%, transparent);
+		}
+	} @else {
+		background-image: linear-gradient(to bottom, transparentize( map-get( $colors, 'black' ), 0) 75%, transparentize(darken($color, 5%), 0.15) 75%, transparent);
+	}
+}

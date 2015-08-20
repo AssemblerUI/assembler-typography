@@ -1,0 +1,15 @@
+@mixin typography-images() {
+	img[alignment="left"] {
+		float: left;
+		height: vr-multiplier(5);
+		margin-top: vr-multiplier(.25);
+		margin-right: map-get( $padding, 'right' );
+		margin-bottom: vr-multiplier(.5);
+	}
+	img[alignment="right"] {
+		float: right;
+		height: vr-multiplier(5.25);
+		margin-right: map-get( $padding, 'left' );
+		margin-bottom: vr-multipier(.5);
+	}
+}

@@ -1,0 +1,26 @@
+@mixin typography-helpers() {
+	@each $alignment in left, center, right, justify {
+		.#{$alignment} {
+			text-align: #{$alignment};
+		}
+	}
+	@each $transformation in lowercase, uppercase, capitalize {
+		.#{$transformation} {
+			text-transform: #{$transformation};
+		}
+	}
+	.nowrap {
+		white-space: nowrap;
+	}
+	/* Combine this class with a width to truncate text */
+	.truncate {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.indent   {
+		text-indent: 1em;
+	}
+
+}
+
