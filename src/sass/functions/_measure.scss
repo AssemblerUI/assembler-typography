@@ -1,0 +1,24 @@
+/*
+ * measure notes:
+ *   * 466px minimum at 16px for 52 characters for Helvetica (416/52 = 8 * 2 = 16)
+ *   * 700px maximum at 16px for 78 characters for Helvetica (624/78 = 8 * 2 = 16)
+ *   * Small Measure, less leading. Wide Measure, more leading
+ *   * Set the base font-size (16px in my case), and line-height, then use that
+ *     for the margin between items, or multiples of that number
+ */
+
+/*
+ * @TODO: need to figure out an actual algorithm for this
+ *
+ * when reading Mark Boulton, he mentioned that 1em of a 16px font should
+ * equal 16px, but when looking into that it didn't work.  This would make
+ * measure a lot easier because 52 characters would be 52rem then. This might be
+ * as a result to me setting the font to 100% since Jason Pamental's talk
+ * mentioned not messing with the base font size since browsers optimize their
+ * fonts for that specific size (makes sense), so that when you adjust to
+ * different devices 100% will always look good and so you should never have to
+ * adjust that size.
+ */
+@function measure( $chars ) {
+	@return ( $chars / 2 ) * 1rem;
+};

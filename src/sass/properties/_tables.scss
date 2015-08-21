@@ -1,0 +1,25 @@
+@mixin typography-tables() {
+	table {
+		width: 100%;
+		border-spacing: 0;
+		border-collapse: collapse;
+	}
+
+	th,
+	td {
+		border: 1px solid darken( map-get( $colors, 'white' ), 7%);
+		padding: calc( #{map-get( $body, 'line-height' )} * .502rem ) map-get( $padding, 'left' );
+	}
+	th {
+		color: map-get( $header, 'color' );
+		text-align: left;
+	}
+
+	tr {
+		&:nth-child(odd) {
+			td {
+				background-color: darken( map-get( $colors, 'white' ), 3% );
+			}
+		}
+	}
+}

@@ -1,0 +1,555 @@
+/*
+ * Capitalize string
+ *
+ * @param [string] $str
+ *
+ * @return [string]
+ */
+/*
+ * Camel case a string
+ *
+ * @depends [strings] _capitalize.scss
+ *
+ * @param [string] $str
+ *
+ * @return [string]
+ */
+/* Capitalize each word in string
+ *
+ * @depends [strings] _capitalize.scss
+ *
+ * @param [string] $str
+ *
+ * @return [string]
+ */
+/*
+ * Replace all occurrences of the search string with the replacement string
+ *
+ * @param [string] $str
+ * @param [string] $search - the string to search
+ * @param [string] $replace - the replacement string
+ *
+ * @return [string]
+ */
+/*
+ * Return whether $value is contained in $list
+ *
+ * @param [list] $list
+ * @param [$value] $value
+ *
+ * @return [boolean]
+ */
+/*
+ * Font Size
+ *
+ * @depends: [misc] _get-opposition-direction
+ *
+ * @param: [string] $direction - one of 4 directions (top|right|bottom|left)
+ *
+ * @returns: [string]
+ *
+ */
+/*
+ * Font Size
+ *
+ * @depends: [misc] _get-opposition-direction
+ *
+ * @param: [string] $direction - one of 4 directions (top|right|bottom|left)
+ *
+ * @returns: [css declaration]
+ *
+ */
+/*
+ * Print a Map
+ *
+ * @param: a map
+ *
+ * @return: the contents of the map as a CSS declaration
+ *
+ * Usage
+ * .element {
+ *     @include print((
+ *         margin: 0 auto,
+ *         max-width: 50%,
+ *         overflow: hidden
+ *     ));
+ * }
+ *
+ * Example without use of print()
+ * $configuration: (
+ *     padding: 1em,
+ *     margin: 0 1em,
+ *     color: grey
+ * );
+ * .element {
+ *     color: map-get( $configuration, color );
+ *     padding: map-get( $configuration, padding );
+ *     margin: map-get( $configuration, margin );
+ *
+ *     &::before {
+ *         background-color: map-get( $configuration, color );
+ *     }
+ * }
+ *
+ * Example with use of print()
+ * .element {
+ *     @include print( $configuration );
+ *
+ *     &::before {
+ *         background-color: map-get( $configuration, color );
+ *     }
+ * }
+ */
+/*
+ * Flip mixin
+ *
+ */
+/*
+ * Rotate mixin
+ *
+ * Could be set up to rotate any number of degrees
+ */
+/*
+ * measure notes:
+ *   * 466px minimum at 16px for 52 characters for Helvetica (416/52 = 8 * 2 = 16)
+ *   * 700px maximum at 16px for 78 characters for Helvetica (624/78 = 8 * 2 = 16)
+ *   * Small Measure, less leading. Wide Measure, more leading
+ *   * Set the base font-size (16px in my case), and line-height, then use that
+ *     for the margin between items, or multiples of that number
+ */
+/*
+ * @TODO: need to figure out an actual algorithm for this
+ *
+ * when reading Mark Boulton, he mentioned that 1em of a 16px font should
+ * equal 16px, but when looking into that it didn't work.  This would make
+ * measure a lot easier because 52 characters would be 52rem then. This might be
+ * as a result to me setting the font to 100% since Jason Pamental's talk
+ * mentioned not messing with the base font size since browsers optimize their
+ * fonts for that specific size (makes sense), so that when you adjust to
+ * different devices 100% will always look good and so you should never have to
+ * adjust that size.
+ */
+/*
+ * This mixin is meant to give a better text-decoration that sits comfortably
+ * below the text and uses text shadow to knock out the underline around
+ * descenders
+ *
+ * $background-color - defaults to white, blends text shadow with background
+ *                     color to create 'knock-out' effect
+ * $color - defaults to blue, matches the text and underline colors
+*/
+/*
+ * OpenType Features Key
+ *
+ * Enable/disable OpenType features in your web pages with web fonts that
+ * support them
+ *
+ * Inspiration: https://github.com/jpamental/otfeatures/
+ * Support: http://caniuse.com/#feat=font-feature
+ * MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/font-feature-settings
+ *
+ * Usage: .smallcaps { @include otfeatures( $smcp: on ) }
+ *
+ * Ligatures
+ * "liga" : common ligatures
+ * "dlig" : discretionary ligatures
+ * "clig" : contextual ligatures
+ * "hlig" : historical ligatures
+ *
+ * Alternate Characters
+ * "swsh" : swashes
+ * "calt" : contextual alternates
+ * "hist" : historical character alternatives
+ * "salt" : stylistic alternatives
+ *
+ * Kerning
+ * "kern" : enable use of embedded kerning table
+ *
+ * Letter Case
+ * "smcp" : small caps
+ * "c2sc" : small caps from caps
+ *
+ * Stylistic Alternates
+ * "ss01" : alternate stylistic set 1
+ * "ss02" : alternate stylistic set 2
+ * "ss03" : alternate stylistic set 3
+ * "ss04" : alternate stylistic set 4
+ * "ss05" : alternate stylistic set 5
+ *
+ * Numeric Extras
+ * "zero" : slashed-zero
+ * "nalt" : alternate annotation
+ *
+ * The following OT Features are either/or rather than single choices, so
+ * require some 'if/else' logic
+ *
+ * Number Case
+ * "ncase" => number case
+ * 0: default
+ * lnum: lining figures
+ * onum: old style figures
+ *
+ * Number Spacing
+ * "nspace" => number spacing
+ * 0: default
+ * pnum: proportional spacing
+ * tnum: tabuplar spacing
+ *
+ * "frac" => fractions
+ * 0: off
+ * frac: normal fractions
+ * afrc: alternate fractions
+ */
+/* @TODO: see how this renders since I don't want everything in the CSS call, only what is declared or needed */
+/*
+ * http://www.modularscale.com/?1&rem&1.618&web&text
+ *
+ * modular scale using 1rem as base with golden ratio
+ * 2206.258rem
+ * 1363.571rem
+ * 842.751rem
+ * 520.86rem
+ * 321.916rem
+ * 198.959rem
+ * 122.966rem
+ * 75.999rem
+ * 46.971rem
+ * 29.03rem
+ * 17.942rem
+ * 11.089rem
+ * 6.854rem
+ * 4.236rem
+ * 2.618rem
+ * 1.618rem
+ * 1rem
+ * 0.618rem
+ * 0.382rem
+ * 0.236rem
+ * 0.146rem
+ * 0.09rem
+ * 0.056rem
+ */
+/* line 2, ../src/sass/mixins/_grid-overlay.scss */
+.typography-grid {
+  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 100% 1.618rem;
+}
+
+/* line 31, ../src/sass/properties/_basics.scss */
+html {
+  color: #666666;
+  font-family: "Cambria", "Georgia", "serif";
+  font-weight: 300;
+  line-height: 1.618;
+  font-size: 100%;
+}
+
+/* line 35, ../src/sass/properties/_basics.scss */
+p, blockquote, q, pre,
+address,
+a, code,
+dl, ol, ul,
+form,
+table {
+  margin: 1.618rem 0;
+}
+
+/* line 43, ../src/sass/properties/_basics.scss */
+p,
+blockquote,
+q {
+  max-width: 39rem;
+}
+
+/* line 48, ../src/sass/properties/_basics.scss */
+blockquote {
+  position: relative;
+  left: calc( -1.618rem - 10px );
+  border-left: 10px solid #ededed;
+  padding-left: 1.618rem;
+  font-style: italic;
+}
+/* line 59, ../src/sass/properties/_basics.scss */
+blockquote cite {
+  display: block;
+  font-style: normal;
+  text-align: right;
+}
+/* line 63, ../src/sass/properties/_basics.scss */
+blockquote cite::before {
+  margin-right: 0.5rem;
+  content: '\2014';
+}
+
+/* line 70, ../src/sass/properties/_basics.scss */
+sub,
+sup {
+  line-height: 0;
+}
+
+/* line 75, ../src/sass/properties/_basics.scss */
+abbr {
+  border-bottom: 1px dotted #333333;
+  cursor: help;
+}
+
+/* line 80, ../src/sass/properties/_basics.scss */
+address {
+  font-style: normal;
+}
+
+/* line 83, ../src/sass/properties/_basics.scss */
+a {
+  background-clip: content-box;
+  background-position: 0 1em;
+  background-repeat: repeat-x;
+  background-size: 1px 1px;
+  color: #0000ee;
+  text-decoration: none;
+  text-shadow: 1px 0 0 white, 1px 0 0 white, -1px 0 0 white, -1px 0 0 white;
+  word-break: break-word;
+  background-image: -webkit-linear-gradient(top, black 75%, rgba(0, 0, 212, 0.85) 75%, transparent);
+  background-image: linear-gradient(to bottom, black 75%, rgba(0, 0, 212, 0.85) 75%, transparent);
+}
+/* line 85, ../src/sass/properties/_basics.scss */
+p a {
+  position: relative;
+  margin: -0.5rem;
+  padding: 0.5rem;
+  background-position: 0 calc(0.9rem + 0.5rem);
+}
+
+/* line 37, ../src/sass/properties/_headers.scss */
+h1,
+.heading1 {
+  margin: 1.618rem 0;
+  color: #111111;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+  font-size: 4.236rem;
+  font-weight: 500;
+  line-height: 1.485;
+}
+
+/* line 37, ../src/sass/properties/_headers.scss */
+h2,
+.heading2 {
+  margin: 1.618rem 0;
+  color: #111111;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+  font-size: 2.618rem;
+  font-weight: 500;
+  line-height: 1.214;
+}
+
+/* line 37, ../src/sass/properties/_headers.scss */
+h3,
+.heading3 {
+  margin: 1.618rem 0;
+  color: #111111;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+  font-size: 1.618rem;
+  font-weight: 500;
+  line-height: 1.961;
+}
+
+/* line 37, ../src/sass/properties/_headers.scss */
+h4,
+.heading4 {
+  margin: 1.618rem 0;
+  color: #111111;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.618;
+}
+
+/* line 37, ../src/sass/properties/_headers.scss */
+h5,
+.heading5 {
+  margin: 1.618rem 0;
+  color: #111111;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+  font-size: 0.618rem;
+  font-weight: 500;
+  line-height: 2.599;
+}
+
+/* line 37, ../src/sass/properties/_headers.scss */
+h6,
+.heading6 {
+  margin: 1.618rem 0;
+  color: #111111;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+  font-size: 0.382rem;
+  font-weight: 500;
+  line-height: 2.888;
+}
+
+/* line 2, ../src/sass/properties/_lists.scss */
+dt {
+  color: #111111;
+  font-weight: 500;
+}
+
+/* line 8, ../src/sass/properties/_lists.scss */
+ul,
+ol {
+  padding-left: 0;
+}
+
+/* line 2, ../src/sass/properties/_forms.scss */
+fieldset {
+  margin: 0;
+  border: 1px solid #ededed;
+  padding: 1.391rem calc( 1.618 * .445rem ) 1.618rem;
+}
+
+/* line 8, ../src/sass/properties/_forms.scss */
+legend {
+  color: #111111;
+  font-weight: 500;
+}
+
+/* line 13, ../src/sass/properties/_forms.scss */
+label {
+  display: block;
+  margin-bottom: calc( 1.618 * .5rem );
+}
+
+/* line 18, ../src/sass/properties/_forms.scss */
+input[type="text"],
+input[type="email"],
+textarea {
+  border: 1px solid #ededed;
+  padding: calc( 1.618 * .0777rem );
+}
+
+/* line 24, ../src/sass/properties/_forms.scss */
+input[type="submit"],
+input[type="button"],
+button {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* line 2, ../src/sass/properties/_tables.scss */
+table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+/* line 8, ../src/sass/properties/_tables.scss */
+th,
+td {
+  border: 1px solid #ededed;
+  padding: calc( 1.618 * .502rem ) calc( 1.618 * .445rem );
+}
+
+/* line 13, ../src/sass/properties/_tables.scss */
+th {
+  color: #111111;
+  text-align: left;
+}
+
+/* line 20, ../src/sass/properties/_tables.scss */
+tr:nth-child(odd) td {
+  background-color: #f7f7f7;
+}
+
+/* line 2, ../src/sass/properties/_code.scss */
+pre {
+  margin-bottom: vr-block(1, -1);
+  border: 1px solid #ededed;
+  padding: calc( 1.618 * .445rem );
+  background-color: #fafafa;
+}
+/* line 8, ../src/sass/properties/_code.scss */
+pre code {
+  border: 0;
+  padding: 0;
+  background: none;
+}
+
+/* line 15, ../src/sass/properties/_code.scss */
+code {
+  border: 1px solid #ededed;
+  padding: calc( 1.618 * .05rem ) calc( 1.618 * .15rem );
+  background-color: #fafafa;
+  font-family: "Courier New", "Courier", "Lucida Sans Typewriter", "Lucida Typewriter", "monospace";
+  font-weight: 400;
+  line-height: 0;
+}
+
+/* line 2, ../src/sass/properties/_images.scss */
+img[alignment="left"] {
+  float: left;
+  height: 8.09rem;
+  margin-top: 0.4045rem;
+  margin-right: calc( 1.618 * .445rem );
+  margin-bottom: 0.809rem;
+}
+
+/* line 9, ../src/sass/properties/_images.scss */
+img[alignment="right"] {
+  float: right;
+  height: 8.4945rem;
+  margin-right: calc( 1.618 * .445rem );
+  margin-bottom: vr-multipier(0.5);
+}
+
+/* line 3, ../src/sass/properties/_helpers.scss */
+.left {
+  text-align: left;
+}
+
+/* line 3, ../src/sass/properties/_helpers.scss */
+.center {
+  text-align: center;
+}
+
+/* line 3, ../src/sass/properties/_helpers.scss */
+.right {
+  text-align: right;
+}
+
+/* line 3, ../src/sass/properties/_helpers.scss */
+.justify {
+  text-align: justify;
+}
+
+/* line 8, ../src/sass/properties/_helpers.scss */
+.lowercase {
+  text-transform: lowercase;
+}
+
+/* line 8, ../src/sass/properties/_helpers.scss */
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* line 8, ../src/sass/properties/_helpers.scss */
+.capitalize {
+  text-transform: capitalize;
+}
+
+/* line 12, ../src/sass/properties/_helpers.scss */
+.nowrap {
+  white-space: nowrap;
+}
+
+/* Combine this class with a width to truncate text */
+/* line 16, ../src/sass/properties/_helpers.scss */
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* line 21, ../src/sass/properties/_helpers.scss */
+.indent {
+  text-indent: 1em;
+}
+
+/*# sourceMappingURL=assembler-typography.css.map */

@@ -1,0 +1,47 @@
+/*
+ * http://www.modularscale.com/?1&rem&1.618&web&text
+ *
+ * modular scale using 1rem as base with golden ratio
+ * 2206.258rem
+ * 1363.571rem
+ * 842.751rem
+ * 520.86rem
+ * 321.916rem
+ * 198.959rem
+ * 122.966rem
+ * 75.999rem
+ * 46.971rem
+ * 29.03rem
+ * 17.942rem
+ * 11.089rem
+ * 6.854rem
+ * 4.236rem
+ * 2.618rem
+ * 1.618rem
+ * 1rem
+ * 0.618rem
+ * 0.382rem
+ * 0.236rem
+ * 0.146rem
+ * 0.09rem
+ * 0.056rem
+ */
+
+@mixin typography-headers() {
+	$scales: reverse( fibonacci( 6, .382 .618 ) );
+	// these are manual right now to give each header the correct computed
+	// height
+	$line-heights: 1.485 1.214 1.961 1.618 2.599 2.888;
+
+	@each $i in $scales {
+		h#{index($scales, $i)},
+		.heading#{index($scales, $i)} {
+			margin: map-get( $body, 'line-height' ) * 1rem 0;
+			color: map-get( $header, 'color' );
+			font-family: map-get( $header, 'font-family' );
+			font-size: $i * 1rem;
+			font-weight: map-get( $header, 'font-weight' );
+			line-height: nth( $line-heights, index( $scales, $i ) );
+		}
+	}
+}

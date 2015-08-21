@@ -1,0 +1,24 @@
+$header: (
+	'color' : map-get( $colors, 'headers' ),
+	'font-family' : map-get( $sans-serif, map-get( $settings, 'sans-serif' ) ),
+	'font-weight' : 500,
+);
+$body: (
+	'color' : map-get( $colors, 'body' ),
+	'font-family' : map-get( $serif, map-get( $settings, 'serif' ) ),
+	'font-weight' : 300,
+	'line-height' : map-get( $ratios, map-get( $settings, 'ratio' ) ),
+);
+$code: (
+	'font-family' : map-get( $monospace, map-get( $settings, 'monospace' ) ),
+	'font-weight' : 400,
+	'line-height': 0
+);
+$measure: (
+	'min' : 52,
+	'max' : 78
+);
+$padding: (
+	'right' : calc( 1.618 * .445rem ),
+	'left' : calc( 1.618 * .445rem )
+);

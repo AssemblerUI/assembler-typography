@@ -1,0 +1,14 @@
+# Permalinks
+permalink: pretty
+
+# Server
+source: docs
+
+highlighter: pygments
+kramdown:
+  input: GFM
+
+gems:
+  - jekyll-sitemap
+
+version: 0.1.0

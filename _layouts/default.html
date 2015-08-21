@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Meta, title, CSS, favicons, etc. -->
+		{% include meta.html %}
+		<style>
+			footer {
+				text-align: center;
+			}
+			footer ul {
+				padding-left: 0;
+			}
+			footer li {
+				display: inline-block;
+				list-style: none;
+			}
+			footer li::after {
+				margin-left: 3px;
+				content: '\2022';
+			}
+			footer li:last-child::after {
+				content: none;
+			}
+			.sr-only {
+				position: absolute;
+				width: 1px;
+				height: 1px;
+				margin: -1px;
+				padding: 0;
+				overflow: hidden;
+				clip: rect(0,0,0,0);
+				border: 0;
+			}
+			.sr-only-focusable:active,
+			.sr-only-focusable:focus {
+				position: static;
+				width: auto;
+				height: auto;
+				margin: 0;
+				overflow: visible;
+				clip: auto;
+			}
+			#main {
+				width: 640px;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body class="typography-grid">
+		<a class="sr-only sr-only-focusable" href="#main"><span class="skiplink-text">Skip to main content</span></a>
+		<!-- <h1 id="header">Assembler Typography</h1> -->
+		<main id="main" class="{{ page.class}}" role="main" tabindex="-1">
+			{{ content }}
+		</main>
+		{% include footer.html %}
+	</body>
+</html>

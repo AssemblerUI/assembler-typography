@@ -1,0 +1,17 @@
+@mixin invert() {
+	$orig: map-get( $body, 'color' );
+	$color: invert( $orig );
+	html.invert {
+		background-color: $orig;
+		color: $color;
+	}
+	blockquote {
+		border-left-color: invert(darken(map-get( $colors, 'white' ), 7%));
+	}
+}
+/*
+ * When reversing colour out, eg white text on black, make sure you increase the leading, tracking and decrease your font-weight. This applies to all widths of Measure.
+ * White text on a black background is a higher contrast to the opposite, so the letterforms need to be wider apart, lighter in weight and have more space between the lines.
+ *
+ */
+
