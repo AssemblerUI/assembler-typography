@@ -49,7 +49,7 @@ For the comment section, please follow the example below and you'll be on the ri
 ```markdown
 Clone script is throwing "repo not found" error
 
-**OS**: OSX 10.8.3
+**OS**: OSX 10.11.2
 **Steps to Reproduce**:
 1.  Run `clone AssemblerUI/assembler-typography`
 2.  Notice that script throws error suggesting repo is not found, although repo is on http://github.com/AssemblerUI/assembler-typography
