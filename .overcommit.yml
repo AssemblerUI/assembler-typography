@@ -12,7 +12,3 @@ PreCommit:
       - 'Gruntfile.js'
       - 'bower.json'
       - 'package.json'
-  HardTabs:
-    exclude:
-      - '/**'
-
