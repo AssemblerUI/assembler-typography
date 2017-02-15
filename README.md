@@ -1,5 +1,7 @@
 # Assembler Typography
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/AssemblerUI/assembler-typography.svg)](https://greenkeeper.io/)
+
 A typography component built for the Assembler framework.
 
 ## Table of contents
